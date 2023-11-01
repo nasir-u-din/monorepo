@@ -6,6 +6,25 @@ const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
  *
  * @type {import('metro-config').MetroConfig}
  */
-const config = {};
-
-module.exports = mergeConfig(getDefaultConfig(__dirname), config);
+module.exports = {
+    transformer: {
+      getTransformOptions: async () => ({
+        transform: {
+          experimentalImportSupport: false,
+          inlineRequires: false,
+        },
+      }),
+    },
+  };
+  
+  const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
+  const path = require('path');
+  
+  const config = {
+    watchFolders: [
+      path.resolve(__dirname, '../../node_modules'),
+      path.resolve(__dirname, '../../node_modules/app'),
+    ],
+  };
+  
+  module.exports = mergeConfig(getDefaultConfig(__dirname), config);
