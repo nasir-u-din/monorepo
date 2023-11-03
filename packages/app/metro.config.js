@@ -1,5 +1,5 @@
 const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
-
+const path = require('path');
 /**
  * Metro configuration
  * https://facebook.github.io/metro/docs/configuration
@@ -17,8 +17,7 @@ module.exports = {
     },
   };
   
-  const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
-  const path = require('path');
+
   
   const config = {
     watchFolders: [
