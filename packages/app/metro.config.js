@@ -22,8 +22,12 @@ module.exports = {
   const config = {
     watchFolders: [
       path.resolve(__dirname, '../../node_modules'),
-      path.resolve(__dirname, '../../node_modules/app'),
+      path.resolve(__dirname, '../../node_modules/ui-lib'),
+
     ],
+    resolver: {
+      unstable_enableSymlinks: true, // Turn on symlink support
+    },
   };
   
   module.exports = mergeConfig(getDefaultConfig(__dirname), config);
